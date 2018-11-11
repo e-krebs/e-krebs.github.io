@@ -238,6 +238,9 @@ body {
   &:hover {
     opacity: 0.87;
   }
+  &[title="github"]:hover {
+    opacity: 1;
+  }
 }
 .mdc-icon-button:not(.mdc-ripple-upgraded):focus::before,
 .mdc-icon-button.mdc-ripple-upgraded--background-focused::before,
