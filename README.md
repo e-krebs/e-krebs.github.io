@@ -1,5 +1,5 @@
 # resume
-personal resume (work in progress) available at https://e-krebs.github.io
+personal resume (work in progress) available at https://krebs.tech/
 
 # scripts
 use `npm start` to to run locally in dev mode (no javascript or css minification)
