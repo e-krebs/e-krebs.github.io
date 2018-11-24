@@ -27,6 +27,7 @@
     "base64-inline-loader": "^1.1.1",
     "clean-webpack-plugin": "^0.1.19",
     "copy-dir": "^0.4.0",
+    "critters-webpack-plugin": "^2.0.1",
     "css-loader": "^1.0.1",
     "extract-loader": "^2.0.1",
     "file-loader": "^1.1.11",
