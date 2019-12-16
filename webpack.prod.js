@@ -1,6 +1,6 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const Critters = require('critters-webpack-plugin');
 
@@ -8,15 +8,10 @@ module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
   optimization: {
+    minimize: true,
     minimizer: [
-      new UglifyJsPlugin({
-        sourceMap: true, // set to true if you want JS source maps
-        uglifyOptions: {
-          output: {
-            comments: false,
-            beautify: false
-          }
-        }
+      new TerserPlugin({
+        sourceMap: true
       }),
       new OptimizeCSSAssetsPlugin({
         cssProcessor: require('cssnano'),
