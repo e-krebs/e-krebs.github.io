@@ -2,8 +2,8 @@
 personal resume (work in progress) available at https://krebs.tech/
 
 # scripts
-use `npm start` to to run locally in dev mode (no javascript or css minification)
+use `yarn start` to to run locally in dev mode (no javascript or css minification)
 
-use `npm run-script start-prod` to run locally in production mode
+use `yarn start-prod` to run locally in production mode
 
-use `npm run-script build` to build and copy the result into the root folder
+use `yarn build` to build and copy the result into the root folder
