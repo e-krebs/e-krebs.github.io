@@ -53,7 +53,7 @@
     "@material/list": "^0.43.0",
     "@material/ripple": "^0.43.0",
     "@material/tab-bar": "^0.43.0",
-    "@material/theme": "^0.43.0",
+    "@material/theme": "^5.1.0",
     "@material/typography": "^0.43.0"
   }
 }
