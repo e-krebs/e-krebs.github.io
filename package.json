@@ -54,6 +54,6 @@
     "@material/ripple": "^0.43.0",
     "@material/tab-bar": "^0.43.0",
     "@material/theme": "^0.43.0",
-    "@material/typography": "^0.43.0"
+    "@material/typography": "^5.1.0"
   }
 }
