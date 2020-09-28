@@ -60,6 +60,7 @@
     "critters-webpack-plugin/**/acorn": "^6.4.1",
     "node-saas/**/lodash": "^4.17.19",
     "webpack/**/acorn": "^6.4.1",
-    "webpack-dev-server/**/websocket-extensions": "^0.1.4"
+    "webpack-dev-server/**/websocket-extensions": "^0.1.4",
+    "webpack-dev-server/**/node-forge": "^0.10.0"
   }
 }
