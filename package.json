@@ -69,6 +69,7 @@
     "terser-webpack-plugin/**/ssri": ">= 8.0.1",
     "webpack-dev-server/**/websocket-extensions": ">= 0.1.4",
     "webpack-dev-server/**/node-forge": ">= 0.10.0",
+    "webpack-dev-server/**/url-parse": ">= 1.5.0",
     "webpack-cli/**/ini": ">= 1.3.6",
     "node-sass/**/y18n": ">= 4.0.1",
     "optimize-css-assets-webpack-plugin/**/postcss": ">= 8.2.10",
