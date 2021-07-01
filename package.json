@@ -69,6 +69,7 @@
     "**/glob-parent": ">= 5.1.2",
     "**/trim-newlines": ">= 3.0.1",
     "**/dns-packet": ">= 1.3.2",
+    "**/color-string": ">= 1.5.5",
     "terser-webpack-plugin/**/ssri": ">= 8.0.1",
     "webpack-dev-server/**/websocket-extensions": ">= 0.1.4",
     "webpack-dev-server/**/node-forge": ">= 0.10.0",
