@@ -66,6 +66,7 @@
     "webpack/**/acorn": ">= 6.4.1",
     "webpack/**/elliptic": ">= 6.5.4",
     "webpack/**/ssri": ">= 8.0.1",
+    "**/glob-parent": ">= 5.1.2",
     "terser-webpack-plugin/**/ssri": ">= 8.0.1",
     "webpack-dev-server/**/websocket-extensions": ">= 0.1.4",
     "webpack-dev-server/**/node-forge": ">= 0.10.0",
