@@ -79,6 +79,7 @@
     "webpack-dev-server/**/url-parse": ">= 1.5.0",
     "webpack-cli/**/ini": ">= 1.3.6",
     "node-sass/**/y18n": ">= 4.0.1",
+    "node-sass/**/tar": ">= 3.2.3",
     "optimize-css-assets-webpack-plugin/**/postcss": ">= 8.2.10",
     "critters-webpack-plugin/**/postcss": ">= 8.2.10",
     "**/ws": ">= 6.2.2",
