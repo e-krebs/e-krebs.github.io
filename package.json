@@ -60,12 +60,14 @@
     "@material/typography": "^0.43.0"
   },
   "resolutions": {
+    "@babel/**/path-parse": ">= 1.0.7",
     "critters-webpack-plugin/**/acorn": ">= 6.4.1",
     "critters-webpack-plugin/**/is-svg": ">= 4.2.2",
     "node-saas/**/lodash": ">= 4.17.21",
     "webpack/**/acorn": ">= 6.4.1",
     "webpack/**/elliptic": ">= 6.5.4",
     "webpack/**/ssri": ">= 8.0.1",
+    "webpack/**/path-parse": ">= 1.0.7",
     "**/glob-parent": ">= 5.1.2",
     "**/trim-newlines": ">= 3.0.1",
     "**/dns-packet": ">= 1.3.2",
