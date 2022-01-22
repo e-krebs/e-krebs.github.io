@@ -63,6 +63,7 @@
     "@babel/**/path-parse": "1.0.7",
     "critters-webpack-plugin/**/acorn": "8.1.0",
     "critters-webpack-plugin/**/is-svg": "4.3.1",
+    "critters-webpack-plugin/**/json-schema": "0.4.0",
     "node-saas/**/lodash": "4.17.21",
     "webpack/**/acorn": "8.1.0",
     "webpack/**/elliptic": "6.5.4",
