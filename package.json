@@ -70,7 +70,7 @@
     "webpack/**/elliptic": "6.5.4",
     "webpack/**/ssri": "8.0.1",
     "webpack/**/path-parse": "1.0.7",
-    "**/glob-parent": "6.0.0",
+    "**/glob-parent": "6.0.1",
     "**/trim-newlines": "4.0.2",
     "**/dns-packet": "5.2.4",
     "**/color-string": "1.5.5",
