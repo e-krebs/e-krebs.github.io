@@ -89,6 +89,7 @@
     "node-sass/**/tar": "6.1.11",
     "optimize-css-assets-webpack-plugin/**/postcss": "8.2.15",
     "critters-webpack-plugin/**/postcss": "8.2.15",
+    "**/minimatch": "3.0.5",
     "**/ws": "7.5.1",
     "postcss-loader/**/postcss": "8.2.15",
     "css-loader/**/postcss": "8.2.15"
