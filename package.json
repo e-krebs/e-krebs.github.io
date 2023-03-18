@@ -73,7 +73,7 @@
     "webpack/**/path-parse": "1.0.7",
     "**/glob-parent": "6.0.1",
     "**/trim-newlines": "4.0.2",
-    "**/dns-packet": "5.2.4",
+    "**/dns-packet": "5.4.0",
     "**/color-string": "1.5.5",
     "**/browserslist": "4.16.6",
     "**/set-value": "4.1.0",
