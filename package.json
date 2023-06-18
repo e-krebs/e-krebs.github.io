@@ -97,6 +97,7 @@
     "**/loader-utils/**/json5": "1.0.2",
     "postcss-loader/**/postcss": "8.2.15",
     "css-loader/**/postcss": "8.2.15",
-    "@babel/core/**/json5": "2.2.2"
+    "@babel/core/**/json5": "2.2.2",
+    "is-svg/fast-xml-parser": ">= 4.2.4"
   }
 }
