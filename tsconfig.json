@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "jsxImportSource": "react",
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "module": "ES2022",
+    "moduleResolution": "node"
+  }
+}
