@@ -54,7 +54,7 @@ const SnapButton: FC<{
 };
 
 const Spacer = () => (
-  <div className="h-full w-[calc(50*var(--vw)-10rem-1.5rem)] md:w-[calc(50*var(--vw)-12rem-1.5rem)] shrink-0" />
+  <div className="h-full w-[calc(50vw-10rem-1.5rem)] md:w-[calc(50vw-12rem-1.5rem)] shrink-0" />
 );
 
 export const Me = () => {
