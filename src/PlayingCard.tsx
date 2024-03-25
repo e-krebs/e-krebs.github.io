@@ -21,7 +21,7 @@ const CardShell = forwardRef<HTMLDivElement, PropsWithChildren<CardShellProps>>(
       ref={ref}
       className={cx(
         className,
-        `flex shrink-0 relative aspect-[2.5/3.5] min-w-60
+        `flex shrink-0 relative aspect-[2.75/4.5] md:aspect-[2.5/3.5] min-w-60
     text-white
     origin-bottom-left bg-gradient-to-br from-yellow-500 to-teal-500 hover:from-teal-500 hover:to-yellow-500
     border border-gray-200 rounded-3xl shadow-xl overflow-hidden`
