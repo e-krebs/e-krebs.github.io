@@ -21,7 +21,7 @@ const CardLink: FC<CardLinkProps> = ({ to, title, icon, className }) => (
     }
     title={title}
   >
-    <CardBack title={title} icon={icon} />
+    <CardBack title={title} icon={icon} className="max-w-full" />
   </NavLink>
 );
 
