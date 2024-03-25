@@ -49,7 +49,7 @@ export const CardFront = forwardRef<HTMLDivElement, PropsWithChildren<CardProps>
           <circle cx="0.5" cy="0.5" r="0.05" className="text-white" />
         </pattern>
 
-        <rect x="0" y="0" width="50" height="70" fill="url(#circles-bg)" />
+        <rect x="0" y="-6" width="50" height="82" fill="url(#circles-bg)" />
       </svg>
       {Icon !== undefined && (
         <>
@@ -94,9 +94,9 @@ export const CardBack = forwardRef<HTMLDivElement, PropsWithChildren<CardBackPro
           <circle cx="0.5" cy="0.5" r="0.05" className="text-white" />
         </pattern>
 
-        <rect x="0" y="0" width="50" height="70" fill="url(#circles-bg)" />
-        <rect x="0" y="0" width="50" height="70" fill="url(#circles-0)" mask="url(#letter)" />
-        <rect x="0" y="0" width="50" height="70" fill="url(#circles-1)" mask="url(#letter)" />
+        <rect x="0" y="-6" width="50" height="82" fill="url(#circles-bg)" />
+        <rect x="0" y="-6" width="50" height="82" fill="url(#circles-0)" mask="url(#letter)" />
+        <rect x="0" y="-6" width="50" height="82" fill="url(#circles-1)" mask="url(#letter)" />
       </svg>
       {Icon !== undefined && (
         <>
