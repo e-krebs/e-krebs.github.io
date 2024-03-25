@@ -10,7 +10,7 @@ import {
 } from "react-icons/md";
 import { CardBack, CardFront } from "../PlayingCard";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
-import { FC, useCallback, useEffect, useRef, useState } from "react";
+import { Dispatch, FC, SetStateAction, useCallback, useEffect, useRef, useState } from "react";
 
 const person = new URL("../img/person.svg", import.meta.url);
 const linkedin = new URL("../img/linkedin.svg", import.meta.url);
@@ -21,37 +21,33 @@ const safeIndex = (index: number) => Math.min(4, Math.max(0, index));
 
 const SnapButton: FC<{
   position: "left" | "right";
-}> = ({ position }) => {
-  const { index } = useParams<{ index: string }>();
-  const navigate = useNavigate();
-
-  return (
-    <>
-      <div
-        className={cx(
-          `z-10 absolute top-0 bottom-0 w-20 flex items-center px-3 from-white blur-sm`,
-          position === "left" && "left-0 bg-gradient-to-r",
-          position === "right" && "right-0 bg-gradient-to-l"
-        )}
-      ></div>
-      <button
-        className={cx(
-          `z-20 p-3 rounded-lg absolute top-[calc(50%-0.5rem-0.75rem/2)] md:top-[calc(50%-1rem-0.75rem/2)]
+  setIndex: Dispatch<SetStateAction<number>>;
+}> = ({ position, setIndex }) => (
+  <>
+    <div
+      className={cx(
+        `z-10 absolute top-0 bottom-0 w-20 flex items-center px-3 from-white blur-sm`,
+        position === "left" && "left-0 bg-gradient-to-r",
+        position === "right" && "right-0 bg-gradient-to-l"
+      )}
+    ></div>
+    <button
+      className={cx(
+        `z-20 p-3 rounded-lg absolute top-[calc(50%-0.5rem-0.75rem/2)] md:top-[calc(50%-1rem-0.75rem/2)]
           bg-teal-500 hover:bg-yellow-500 transition-colors
           text-4xl text-white blur-none drop-shadow-xl`,
-          position === "left" && "left-3 hover:-translate-x-1",
-          position === "right" && "right-3 hover:translate-x-1"
-        )}
-        onClick={() => {
-          navigate(`/home/${safeIndex(parseInt(index) + (position === "left" ? -1 : 1))}`);
-        }}
-      >
-        {position === "left" && <MdArrowBack className="w-4 h-4 md:w-8 md:h-8" />}
-        {position === "right" && <MdArrowForward className="w-4 h-4 md:w-8 md:h-8" />}
-      </button>
-    </>
-  );
-};
+        position === "left" && "left-3 hover:-translate-x-1",
+        position === "right" && "right-3 hover:translate-x-1"
+      )}
+      onClick={() => {
+        setIndex((index) => safeIndex(index + (position === "left" ? -1 : 1)));
+      }}
+    >
+      {position === "left" && <MdArrowBack className="w-4 h-4 md:w-8 md:h-8" />}
+      {position === "right" && <MdArrowForward className="w-4 h-4 md:w-8 md:h-8" />}
+    </button>
+  </>
+);
 
 const Spacer = () => (
   <div className="h-full w-[calc(50vw-10rem-1.5rem)] md:w-[calc(50vw-12rem-1.5rem)] shrink-0" />
@@ -66,35 +62,36 @@ export const Me = () => {
     setSnapWidth(node?.offsetWidth ?? 0);
   }, []);
 
-  const { index } = useParams<{ index: string }>();
+  const params = useParams<{ index: string }>();
+  const [index, setIndex] = useState(parseInt(params.index) ?? 0);
 
   useEffect(() => {
-    const left = snapWidth * parseInt(index);
-    scrollerRef.current.scrollTo({ left: left, behavior: "smooth" });
+    navigate(`/home/${safeIndex(index)}`);
+    scrollerRef.current.scrollTo({ left: snapWidth * index, behavior: "smooth" });
   }, [snapWidth, index]);
 
   useEffect(() => {
     const scrollEvent = () => {
       const currentIndex = Math.round(scrollerRef.current.scrollLeft / snapWidth);
-      if (index !== `${currentIndex}`) {
-        navigate(`/home/${safeIndex(currentIndex)}`);
-      }
+      setIndex(currentIndex);
     };
-    scrollerRef.current?.addEventListener("scroll", scrollEvent);
+    const scrollEventType = "onscrollend" in window ? "scrollend" : "scroll";
+    scrollerRef.current?.addEventListener(scrollEventType, scrollEvent);
 
     return () => {
-      scrollerRef.current?.removeEventListener("scroll", scrollEvent);
+      scrollerRef.current?.removeEventListener(scrollEventType, scrollEvent);
     };
   }, [scrollerRef.current]);
 
   return (
     <>
-      <SnapButton position="left" />
-      <SnapButton position="right" />
+      <SnapButton position="left" setIndex={setIndex} />
+      <SnapButton position="right" setIndex={setIndex} />
 
       <div
         ref={scrollerRef}
-        className="relative h-full w-full flex gap-6 snap-x *:snap-center *:my-auto overflow-x-auto"
+        className="relative h-full w-full flex gap-6 snap-x *:snap-center *:my-auto overflow-x-scroll overflow-y-hidden"
+        style={{ WebkitOverflowScrolling: "touch" }}
       >
         <Spacer />
 
@@ -186,7 +183,7 @@ export const Me = () => {
         </CardFront>
 
         <CardBack
-          className={cx("w-80 md:w-96 hover:rotate-1", index === "4" && "delay-300 rotate-1")}
+          className={cx("w-80 md:w-96 hover:rotate-1", index === 4 && "delay-300 rotate-1")}
           icon={MdArrowForward}
         >
           <div className="absolute w-full h-full px-6 flex items-center justify-center">
