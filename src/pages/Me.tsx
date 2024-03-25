@@ -10,7 +10,7 @@ import {
 } from "react-icons/md";
 import { CardBack, CardFront } from "../PlayingCard";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
-import { FC, useEffect, useMemo, useReducer, useRef } from "react";
+import { FC, useCallback, useEffect, useRef, useState } from "react";
 
 const person = new URL("../img/person.svg", import.meta.url);
 const linkedin = new URL("../img/linkedin.svg", import.meta.url);
@@ -29,14 +29,14 @@ const SnapButton: FC<{
     <>
       <div
         className={cx(
-          `z-10 fixed top-0 bottom-0 w-20 flex items-center px-3 from-white blur-sm`,
+          `z-10 absolute top-0 bottom-0 w-20 flex items-center px-3 from-white blur-sm`,
           position === "left" && "left-0 bg-gradient-to-r",
           position === "right" && "right-0 bg-gradient-to-l"
         )}
       ></div>
       <button
         className={cx(
-          `z-20 p-3 rounded-lg fixed top-1/2
+          `z-20 p-3 rounded-lg absolute top-[calc(50%-0.5rem-0.75rem/2)] md:top-[calc(50%-1rem-0.75rem/2)]
           bg-teal-500 hover:bg-yellow-500 transition-colors
           text-4xl text-white blur-none drop-shadow-xl`,
           position === "left" && "left-3 hover:-translate-x-1",
@@ -59,24 +59,23 @@ const Spacer = () => (
 
 export const Me = () => {
   const navigate = useNavigate();
-  const scrollerRef = useRef<HTMLDivElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
+  const scrollerRef = useRef<HTMLDivElement | undefined>();
+
+  const [snapWidth, setSnapWidth] = useState(0);
+  const cardRef = useCallback((node: HTMLDivElement | null) => {
+    setSnapWidth(node?.offsetWidth ?? 0);
+  }, []);
 
   const { index } = useParams<{ index: string }>();
-
-  const snapWidth = useMemo(
-    () => cardRef.current?.offsetWidth + 24, // gap-6
-    [scrollerRef.current?.offsetWidth]
-  );
 
   useEffect(() => {
     const left = snapWidth * parseInt(index);
     scrollerRef.current.scrollTo({ left: left, behavior: "smooth" });
-  }, [index]);
+  }, [snapWidth, index]);
 
   useEffect(() => {
     const scrollEvent = () => {
-      const currentIndex = Math.floor(scrollerRef.current.scrollLeft / snapWidth);
+      const currentIndex = Math.round(scrollerRef.current.scrollLeft / snapWidth);
       if (index !== `${currentIndex}`) {
         navigate(`/home/${safeIndex(currentIndex)}`);
       }
@@ -99,7 +98,7 @@ export const Me = () => {
       >
         <Spacer />
 
-        <CardFront icon={MdPerson} className="w-80 md:w-96" ref={cardRef}>
+        <CardFront icon={MdPerson} className="w-80 md:w-96 hover:-rotate-1" ref={cardRef}>
           <div className="absolute top-12 w-full flex flex-col gap-y-6">
             <img src={person.href} alt="person" className="mx-auto max-h-56 md:max-h-64" />
             <title className="text-3xl md:text-4xl font-semibold capitalize flex flex-col w-full items-center p-3">
@@ -165,7 +164,7 @@ export const Me = () => {
               <li>Most of my professional work is closed-source</li>
               <li>I'm a problem solver</li>
               <li>I'm a fast learner</li>
-              <li>I'm a very organised person, tending to always anticipate what's to come</li>
+              <li>I'm a very organized person, tending to always anticipate what's to come</li>
             </ul>
           </div>
         </CardFront>
@@ -178,7 +177,7 @@ export const Me = () => {
             <ul className="pl-9 pr-3 md:pl-12 md:pr-6 space-y-1.5 md:space-y-3 text-lg md:text-xl list-outside list-disc">
               <li>Native french, professional english</li>
               <li>I live in Paris (France)</li>
-              <li>I'm an enthusiactic person who likes team work & challenges</li>
+              <li>I'm an enthusiastic person who likes team work & challenges</li>
               <li>I am used to (and enjoy) tutoring junior people</li>
               <li>I'm a curious person, always looking at what's happening around</li>
               <li>I'm not looking for a new work experience, at least right now!</li>
@@ -187,10 +186,7 @@ export const Me = () => {
         </CardFront>
 
         <CardBack
-          className={cx(
-            "w-80 md:w-96 hover:rotate-1",
-            index === "4" && "delay-300 md:delay-0 rotate-1 md:rotate-0"
-          )}
+          className={cx("w-80 md:w-96 hover:rotate-1", index === "4" && "delay-300 rotate-1")}
           icon={MdArrowForward}
         >
           <div className="absolute w-full h-full px-6 flex items-center justify-center">
