@@ -75,11 +75,10 @@ export const Me = () => {
       const currentIndex = Math.round(scrollerRef.current.scrollLeft / snapWidth);
       setIndex(currentIndex);
     };
-    const scrollEventType = "onscrollend" in window ? "scrollend" : "scroll";
-    scrollerRef.current?.addEventListener(scrollEventType, scrollEvent);
+    scrollerRef.current?.addEventListener("scrollend", scrollEvent);
 
     return () => {
-      scrollerRef.current?.removeEventListener(scrollEventType, scrollEvent);
+      scrollerRef.current?.removeEventListener("scrollend", scrollEvent);
     };
   }, [scrollerRef.current]);
 
