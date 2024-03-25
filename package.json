@@ -4,7 +4,10 @@
   "description": "",
   "scripts": {
     "dev": "parcel serve src/index.html",
-    "build": "parcel build src/index.html --dist-dir ."
+    "clean:cache": "rimraf .parcel-cache",
+    "clean:build": "rimraf *.*.{ico,svg,css,map,js} -g",
+    "clean": "yarn clean:cache && yarn clean:build",
+    "build": "yarn clean && parcel build src/index.html --dist-dir ."
   },
   "repository": {
     "type": "git",
@@ -24,6 +27,7 @@
     "parcel": "^2.12.0",
     "postcss": "^8.4.38",
     "process": "^0.11.10",
+    "rimraf": "^5.0.5",
     "tailwindcss": "^3.4.1"
   },
   "dependencies": {
