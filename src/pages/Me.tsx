@@ -54,7 +54,7 @@ const SnapButton: FC<{
 };
 
 const Spacer = () => (
-  <div className="w-[calc(50%-10rem-1.5rem)] md:w-[calc(50%-12rem-1.5rem)] shrink-0" />
+  <div className="h-full w-[calc(50*var(--vw)-10rem-1.5rem)] md:w-[calc(50*var(--vw)-12rem-1.5rem)] shrink-0" />
 );
 
 export const Me = () => {
@@ -80,10 +80,10 @@ export const Me = () => {
         navigate(`/home/${safeIndex(currentIndex)}`);
       }
     };
-    scrollerRef.current?.addEventListener("scrollend", scrollEvent);
+    scrollerRef.current?.addEventListener("scroll", scrollEvent);
 
     return () => {
-      scrollerRef.current?.removeEventListener("scrollend", scrollEvent);
+      scrollerRef.current?.removeEventListener("scroll", scrollEvent);
     };
   }, [scrollerRef.current]);
 
