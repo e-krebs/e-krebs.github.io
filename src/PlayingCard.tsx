@@ -42,6 +42,8 @@ export const CardFront = forwardRef<HTMLDivElement, PropsWithChildren<CardProps>
         strokeWidth="0"
         viewBox="0 0 50 70"
         xmlns="http://www.w3.org/2000/svg"
+        width="100%"
+        height="100%"
       >
         <pattern id="circles-bg" x="0" y="0" width="1" height="1" patternUnits="userSpaceOnUse">
           <circle cx="0.5" cy="0.5" r="0.05" className="text-white" />
@@ -69,6 +71,8 @@ export const CardBack = forwardRef<HTMLDivElement, PropsWithChildren<CardBackPro
         strokeWidth="0"
         viewBox="0 0 50 70"
         xmlns="http://www.w3.org/2000/svg"
+        width="100%"
+        height="100%"
       >
         <mask id="letter">
           <g strokeWidth="5" strokeLinecap="round">
