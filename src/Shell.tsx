@@ -3,7 +3,6 @@ import { NavLink, Outlet } from "react-router-dom";
 import { CardBack, CardBackProps } from "./PlayingCard";
 import { FC } from "react";
 import { MdPerson, MdWork, MdAllInclusive } from "react-icons/md";
-import { IconType } from "react-icons";
 
 interface CardLinkProps extends CardBackProps {
   to: string;
@@ -29,7 +28,7 @@ const CardLink: FC<CardLinkProps> = ({ to, title, icon, className }) => (
 export const Shell = () => (
   <div className="flex flex-col">
     <header className="relative h-32">
-      <div className="h-full md:max-w-[50rem] mx-auto grid grid-cols-3 justify-end px-2 md:px-6 -mt-[18.6rem] md:-mt-64 gap-6">
+      <div className="h-full md:max-w-[50rem] mx-auto grid grid-cols-3 justify-end px-2 md:px-6 -mt-[20.5rem] md:-mt-64 gap-6">
         <CardLink
           to="/home"
           title="who am I?"
@@ -50,7 +49,7 @@ export const Shell = () => (
         />
       </div>
     </header>
-    <main className="pt-12 flex justify-center items-center w-full h-[calc(100vh-8rem)] overflow-hidden">
+    <main className="relative flex justify-center items-center w-full h-[calc(100vh-8rem)] overflow-hidden">
       <Outlet />
     </main>
   </div>
