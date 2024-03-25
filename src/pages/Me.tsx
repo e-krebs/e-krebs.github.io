@@ -71,7 +71,6 @@ export const Me = () => {
 
   useEffect(() => {
     const left = snapWidth * parseInt(index);
-    console.log({ left }, scrollerRef.current.scrollLeft);
     scrollerRef.current.scrollTo({ left: left, behavior: "smooth" });
   }, [index]);
 
