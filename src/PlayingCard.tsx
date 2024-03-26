@@ -1,5 +1,5 @@
 import cx from "clsx";
-import { FC, MouseEventHandler, PropsWithChildren, forwardRef } from "react";
+import { MouseEventHandler, PropsWithChildren, forwardRef } from "react";
 import { IconType } from "react-icons";
 
 interface CardShellProps {

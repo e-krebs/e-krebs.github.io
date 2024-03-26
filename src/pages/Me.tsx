@@ -1,4 +1,5 @@
 import cx from "clsx";
+import { FC, useCallback, useRef, useState } from "react";
 import {
   MdArrowForward,
   MdArrowBack,
@@ -8,21 +9,18 @@ import {
   MdOpenInNew,
   MdPerson,
 } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 import { CardBack, CardFront } from "../PlayingCard";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
-import { Dispatch, FC, SetStateAction, useCallback, useEffect, useRef, useState } from "react";
 
 const person = new URL("../img/person.svg", import.meta.url);
 const linkedin = new URL("../img/linkedin.svg", import.meta.url);
 const twitter = new URL("../img/twitter.svg", import.meta.url);
 const github = new URL("../img/github.svg", import.meta.url);
 
-const safeIndex = (index: number) => Math.min(4, Math.max(0, index));
-
 const SnapButton: FC<{
   position: "left" | "right";
-  setIndex: Dispatch<SetStateAction<number>>;
-}> = ({ position, setIndex }) => (
+  scroll: () => void;
+}> = ({ position, scroll }) => (
   <>
     <div
       className={cx(
@@ -39,9 +37,7 @@ const SnapButton: FC<{
         position === "left" && "left-3 hover:-translate-x-1",
         position === "right" && "right-3 hover:translate-x-1"
       )}
-      onClick={() => {
-        setIndex((index) => safeIndex(index + (position === "left" ? -1 : 1)));
-      }}
+      onClick={scroll}
     >
       {position === "left" && <MdArrowBack className="w-4 h-4 md:w-8 md:h-8" />}
       {position === "right" && <MdArrowForward className="w-4 h-4 md:w-8 md:h-8" />}
@@ -54,7 +50,6 @@ const Spacer = () => (
 );
 
 export const Me = () => {
-  const navigate = useNavigate();
   const scrollerRef = useRef<HTMLDivElement | undefined>();
 
   const [snapWidth, setSnapWidth] = useState(0);
@@ -62,30 +57,26 @@ export const Me = () => {
     setSnapWidth(node?.offsetWidth ?? 0);
   }, []);
 
-  const params = useParams<{ index: string }>();
-  const [index, setIndex] = useState(parseInt(params.index) ?? 0);
-
-  useEffect(() => {
-    navigate(`/home/${safeIndex(index)}`);
-    scrollerRef.current.scrollTo({ left: snapWidth * index, behavior: "smooth" });
-  }, [snapWidth, index]);
-
-  useEffect(() => {
-    const scrollEvent = () => {
-      const currentIndex = Math.round(scrollerRef.current.scrollLeft / snapWidth);
-      setIndex(currentIndex);
-    };
-    scrollerRef.current?.addEventListener("scrollend", scrollEvent);
-
-    return () => {
-      scrollerRef.current?.removeEventListener("scrollend", scrollEvent);
-    };
-  }, [scrollerRef.current]);
-
   return (
     <>
-      <SnapButton position="left" setIndex={setIndex} />
-      <SnapButton position="right" setIndex={setIndex} />
+      <SnapButton
+        position="left"
+        scroll={() =>
+          scrollerRef.current.scrollTo({
+            left: scrollerRef.current.scrollLeft - snapWidth,
+            behavior: "smooth",
+          })
+        }
+      />
+      <SnapButton
+        position="right"
+        scroll={() =>
+          scrollerRef.current.scrollTo({
+            left: scrollerRef.current.scrollLeft + snapWidth,
+            behavior: "smooth",
+          })
+        }
+      />
 
       <div
         ref={scrollerRef}
@@ -181,10 +172,7 @@ export const Me = () => {
           </div>
         </CardFront>
 
-        <CardBack
-          className={cx("w-80 md:w-96 hover:rotate-1", index === 4 && "delay-300 rotate-1")}
-          icon={MdArrowForward}
-        >
+        <CardBack className={cx("w-80 md:w-96 hover:rotate-1")} icon={MdArrowForward}>
           <div className="absolute w-full h-full px-6 flex items-center justify-center">
             <div className="backdrop-blur-sm text-2xl leading-10 text-center">
               more details in the{" "}
@@ -201,6 +189,7 @@ export const Me = () => {
             </div>
           </div>
         </CardBack>
+
         <Spacer />
       </div>
     </>
