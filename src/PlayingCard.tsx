@@ -19,9 +19,10 @@ export const CardContent: FC<PropsWithChildren<{ className?: string }>> = ({
   children,
 }) => <div className={cx(className, "absolute w-full flex flex-col")}>{children}</div>;
 
-export const CardTitle: FC<PropsWithChildren<{}>> = ({ children }) => (
+export const CardTitle: FC<PropsWithChildren<{ subtitle?: string }>> = ({ subtitle, children }) => (
   <title className="text-3xl md:text-4xl font-semibold capitalize flex flex-col w-full items-center p-3">
     {children}
+    <span className="text-lg md-text-xl lowercase">{subtitle}</span>
   </title>
 );
 
