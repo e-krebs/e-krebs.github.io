@@ -1,6 +1,5 @@
 import cx from "clsx";
-import { MouseEventHandler, PropsWithChildren, forwardRef } from "react";
-import { IconType } from "react-icons";
+import { FC, MouseEventHandler, PropsWithChildren, forwardRef } from "react";
 
 interface CardShellProps {
   onClick?: MouseEventHandler<HTMLElement>;
@@ -8,12 +7,39 @@ interface CardShellProps {
 }
 
 export interface CardProps extends CardShellProps {
-  icon?: IconType;
+  icon?: FC<{ className?: string }>;
 }
 
 export interface CardBackProps extends CardProps {
   title?: string;
 }
+
+export const CardContent: FC<PropsWithChildren<{ className?: string }>> = ({
+  className,
+  children,
+}) => <div className={cx(className, "absolute w-full flex flex-col")}>{children}</div>;
+
+export const CardTitle: FC<PropsWithChildren<{}>> = ({ children }) => (
+  <title className="text-3xl md:text-4xl font-semibold capitalize flex flex-col w-full items-center p-3">
+    {children}
+  </title>
+);
+
+export const CardList: FC<PropsWithChildren<{ className?: string; isSubList?: boolean }>> = ({
+  className,
+  children,
+  isSubList = false,
+}) => (
+  <ul
+    className={cx(
+      className,
+      isSubList ? "inside" && "list-inside" : "list-outside pl-9 md:pl-12 pr-3 md:pr-6",
+      "text-lg md:text-xl list-disc"
+    )}
+  >
+    {children}
+  </ul>
+);
 
 const CardShell = forwardRef<HTMLDivElement, PropsWithChildren<CardShellProps>>(
   ({ children, className, onClick }, ref) => (
