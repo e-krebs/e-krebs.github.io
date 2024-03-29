@@ -2,7 +2,7 @@ import cx from "clsx";
 import { FC } from "react";
 import { MdPerson, MdWork, MdAllInclusive } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
-import { CardBack, CardBackProps } from "./PlayingCard";
+import { CardBack, CardBackProps } from "./components/PlayingCard";
 
 interface CardLinkProps extends CardBackProps {
   to: string;

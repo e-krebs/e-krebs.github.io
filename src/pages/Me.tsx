@@ -1,4 +1,3 @@
-import { FC } from "react";
 import {
   MdArrowForward,
   MdCalendarMonth,
@@ -8,8 +7,9 @@ import {
   MdPerson,
 } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-import { Scroller } from "../Scroller";
-import { CardContent, CardList, CardTitle } from "../PlayingCard";
+import { Scroller } from "../components/Scroller";
+import { CardContent, CardList, CardTitle } from "../components/PlayingCard";
+import { CardLinkIcon } from "../components/CardLinkIcon";
 
 const person = new URL("../img/person.svg", import.meta.url);
 const linkedin = new URL("../img/linkedin.svg", import.meta.url);
@@ -18,16 +18,6 @@ const github = new URL("../img/github.svg", import.meta.url);
 
 const algolia = new URL("../img/algolia.svg", import.meta.url);
 const expertime = new URL("../img/expertime.svg", import.meta.url);
-
-const CardLinkIcon: FC<{ href: string; title: string; imageUrl: URL }> = ({
-  href,
-  title,
-  imageUrl,
-}) => (
-  <a href={href} title={title} target="_blank">
-    <img src={imageUrl.href} alt={title} className="w-9 h-9" />
-  </a>
-);
 
 export const Me = () => (
   <Scroller
