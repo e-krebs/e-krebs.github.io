@@ -1,3 +1,6 @@
 node_modules
 dist
 fonts
+.parcel-cache
+_old
+.vscode
