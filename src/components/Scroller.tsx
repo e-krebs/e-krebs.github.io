@@ -1,13 +1,13 @@
 import cx from "clsx";
 import { FC, ReactNode, useCallback, useRef, useState } from "react";
-import { IconType } from "react-icons";
 import { MdArrowForward, MdArrowBack } from "react-icons/md";
 import { CardBack, CardFront } from "./PlayingCard";
 
 const SnapButton: FC<{
   position: "left" | "right";
   scroll: () => void;
-}> = ({ position, scroll }) => (
+  ariaLabel: string;
+}> = ({ position, scroll, ariaLabel }) => (
   <>
     <div
       className={cx(
@@ -17,6 +17,7 @@ const SnapButton: FC<{
       )}
     ></div>
     <button
+      aria-label={ariaLabel}
       className={cx(
         `z-20 p-3 rounded-lg absolute top-[calc(50%-0.5rem-0.75rem/2)] md:top-[calc(50%-1rem-0.75rem/2)]
           bg-teal-500 hover:bg-yellow-500 transition-colors
@@ -52,6 +53,7 @@ export const Scroller: FC<{ cards: CardData[] }> = ({ cards }) => {
   return (
     <>
       <SnapButton
+        ariaLabel="Previous"
         position="left"
         scroll={() =>
           scrollerRef.current.scrollTo({
@@ -61,6 +63,7 @@ export const Scroller: FC<{ cards: CardData[] }> = ({ cards }) => {
         }
       />
       <SnapButton
+        ariaLabel="Next"
         position="right"
         scroll={() =>
           scrollerRef.current.scrollTo({
@@ -82,6 +85,7 @@ export const Scroller: FC<{ cards: CardData[] }> = ({ cards }) => {
           return (
             <Card
               ref={index === 0 ? cardRef : null}
+              key={index}
               icon={icon}
               className={cx(
                 "w-80 md:w-96",

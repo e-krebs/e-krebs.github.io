@@ -10,14 +10,7 @@ import { NavLink } from "react-router-dom";
 import { Scroller } from "../components/Scroller";
 import { CardContent, CardList, CardTitle } from "../components/PlayingCard";
 import { CardLinkIcon } from "../components/CardLinkIcon";
-
-const person = new URL("../img/person.svg", import.meta.url);
-const linkedin = new URL("../img/linkedin.svg", import.meta.url);
-const twitter = new URL("../img/twitter.svg", import.meta.url);
-const github = new URL("../img/github.svg", import.meta.url);
-
-const algolia = new URL("../img/algolia.svg", import.meta.url);
-const expertime = new URL("../img/expertime.svg", import.meta.url);
+import { Svg } from "../components/Svg";
 
 export const Me = () => (
   <Scroller
@@ -26,7 +19,12 @@ export const Me = () => (
         icon: MdPerson,
         content: (
           <CardContent className="top-12 gap-y-6">
-            <img src={person.href} alt="person" className="mx-auto max-h-56 md:max-h-64" />
+            <Svg
+              image="person"
+              className="mx-auto max-h-56 max-w-56 md:max-h-64 md:max-w-64"
+              height={256}
+              width={256}
+            />
             <CardTitle>
               <h1>Emmanuel Krebs</h1>
               <span className="text-lg md:text-xl">Senior software engineer</span>
@@ -34,15 +32,10 @@ export const Me = () => (
             <div className="flex gap-x-6 justify-center text-white">
               <CardLinkIcon
                 href="https://www.linkedin.com/in/emmanuel-krebs-37926b91/"
-                title="linkedin"
-                imageUrl={linkedin}
+                image="linkedin"
               />
-              <CardLinkIcon
-                href="https://twitter.com/emmkrebs"
-                title="twitter"
-                imageUrl={twitter}
-              />
-              <CardLinkIcon href="https://github.com/e-krebs" title="github" imageUrl={github} />
+              <CardLinkIcon href="https://twitter.com/emmkrebs" image="twitter" />
+              <CardLinkIcon href="https://github.com/e-krebs" image="github" />
             </div>
           </CardContent>
         ),
@@ -62,22 +55,20 @@ export const Me = () => (
               </li>
               <li>
                 <b>2012:</b> started as a software developer at{" "}
-                <img src={expertime.href} alt="expertime" className="inline mb-1 w-4 h-4" />{" "}
-                expertime (a service company){" "}
+                <Svg image="expertime" className="inline mb-1 w-4 h-4" /> expertime (a service
+                company){" "}
               </li>
               <li>
                 <b>2014:</b> became a technical consultant at{" "}
-                <img src={expertime.href} alt="expertime" className="inline mb-1 w-4 h-4" />{" "}
-                expertime
+                <Svg image="expertime" className="inline mb-1 w-4 h-4" /> expertime
               </li>
               <li>
                 <b>2017:</b> became a software architect at{" "}
-                <img src={expertime.href} alt="expertime" className="inline mb-1 w-4 h-4" />{" "}
-                expertime
+                <Svg image="expertime" className="inline mb-1 w-4 h-4" /> expertime
               </li>
               <li>
                 <b>2019:</b> became a senior software engineer at{" "}
-                <img src={algolia.href} alt="algolia" className="inline mb-1 w-4 h-4" /> algolia
+                <Svg image="algolia" className="inline mb-1 w-4 h-4" /> algolia
               </li>
             </CardList>
           </CardContent>

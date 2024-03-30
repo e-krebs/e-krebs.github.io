@@ -1,11 +1,8 @@
 import { FC } from "react";
+import { Svg, type Image } from "./Svg";
 
-export const CardLinkIcon: FC<{ href: string; title: string; imageUrl: URL }> = ({
-  href,
-  title,
-  imageUrl,
-}) => (
-  <a href={href} title={title} target="_blank">
-    <img src={imageUrl.href} alt={title} className="w-9 h-9" />
+export const CardLinkIcon: FC<{ href: string; image: Image }> = ({ href, image }) => (
+  <a href={href} title={image} target="_blank">
+    <Svg image={image} className="w-9 h-9" />
   </a>
 );

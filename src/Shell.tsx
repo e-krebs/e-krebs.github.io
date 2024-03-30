@@ -49,7 +49,7 @@ export const Shell = () => (
         />
       </div>
     </header>
-    <main className="relative flex justify-center items-center w-full h-[calc(100vh-8rem)] overflow-hidden">
+    <main className="relative flex justify-center items-center w-full h-[calc(100dvh-8rem)] overflow-hidden">
       <Outlet />
     </main>
   </div>

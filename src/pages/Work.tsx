@@ -3,40 +3,10 @@ import { CardContent, CardList, CardTitle } from "../components/PlayingCard";
 import { Scroller } from "../components/Scroller";
 import { TagList } from "../components/Tags";
 import { NavLink } from "react-router-dom";
+import { Svg } from "../components/Svg";
 
-const algolia = new URL("../img/algolia.svg", import.meta.url);
-const expertime = new URL("../img/expertime.svg", import.meta.url);
-
-const Algolia = ({ className }) => <img src={algolia.href} alt="algolia" className={className} />;
-const Expertime = ({ className }) => (
-  <img src={expertime.href} alt="expertime" className={className} />
-);
-
-const threedots = new URL("../img/3dots.svg", import.meta.url);
-const android = new URL("../img/android.svg", import.meta.url);
-const angular = new URL("../img/angular.svg", import.meta.url);
-const azure = new URL("../img/azure.svg", import.meta.url);
-const bootstrap = new URL("../img/bootstrap.svg", import.meta.url);
-const chrome = new URL("../img/chrome.svg", import.meta.url);
-const csharp = new URL("../img/csharp.svg", import.meta.url);
-const dotnet = new URL("../img/dotnet.svg", import.meta.url);
-const ios = new URL("../img/ios.svg", import.meta.url);
-const java = new URL("../img/java.svg", import.meta.url);
-const javascript = new URL("../img/javascript.svg", import.meta.url);
-const jest = new URL("../img/jest.svg", import.meta.url);
-const materialDesign = new URL("../img/material-design.svg", import.meta.url);
-const microsoft = new URL("../img/microsoft.svg", import.meta.url);
-const msSql = new URL("../img/ms-sql.svg", import.meta.url);
-const node = new URL("../img/node.svg", import.meta.url);
-const polymer = new URL("../img/polymer.svg", import.meta.url);
-const rails = new URL("../img/rubyonrails.svg", import.meta.url);
-const react = new URL("../img/react.svg", import.meta.url);
-const sqlite = new URL("../img/sqlite.svg", import.meta.url);
-const swift = new URL("../img/swift.svg", import.meta.url);
-const tailwindcss = new URL("../img/tailwindcss.svg", import.meta.url);
-const typescript = new URL("../img/typescript.svg", import.meta.url);
-const vb = new URL("../img/vb.svg", import.meta.url);
-const webComponents = new URL("../img/web-components.svg", import.meta.url);
+const Algolia = ({ className }) => <Svg image="algolia" className={className} />;
+const Expertime = ({ className }) => <Svg image="expertime" className={className} />;
 
 export const Work = () => (
   <Scroller
@@ -93,14 +63,7 @@ export const Work = () => (
                 <li>Heavily tested (jest)</li>
               </CardList>
             </CardContent>
-            <TagList
-              tags={[
-                { label: "jest", icon: jest },
-                { label: "React", icon: react },
-                { label: "Typescript", icon: typescript },
-                { label: "tailwindcss", icon: tailwindcss },
-              ]}
-            />
+            <TagList tags={["jest", "React", "Typescript", "tailwindcss"]} />
           </>
         ),
       },
@@ -117,15 +80,7 @@ export const Work = () => (
                 <li>TDD developing: backend (rspec) & frontend (jest)</li>
               </CardList>
             </CardContent>
-            <TagList
-              tags={[
-                { label: "jest", icon: jest },
-                { label: "Rails", icon: rails },
-                { label: "React", icon: react },
-                { label: "Typescript", icon: typescript },
-                { label: "tailwindcss", icon: tailwindcss },
-              ]}
-            />
+            <TagList tags={["jest", "Rails", "React", "Typescript", "tailwindcss"]} />
           </>
         ),
       },
@@ -142,14 +97,7 @@ export const Work = () => (
                 <li>Demo Builder: build demo for prospects with a no-code UI</li>
               </CardList>
             </CardContent>
-            <TagList
-              tags={[
-                { label: "node", icon: node },
-                { label: "React", icon: react },
-                { label: "Typescript", icon: typescript },
-                { label: "tailwindcss", icon: tailwindcss },
-              ]}
-            />
+            <TagList tags={["node", "React", "Typescript", "tailwindcss"]} />
           </>
         ),
       },
@@ -189,12 +137,12 @@ export const Work = () => (
             </CardContent>
             <TagList
               tags={[
-                { label: "ARKit", icon: ios },
-                { label: "polymer", icon: polymer },
-                { label: ".NET core", icon: dotnet },
-                { label: "shadow DOM", icon: javascript },
-                { label: "web components", icon: webComponents },
-                { label: "material design lite", icon: materialDesign },
+                { label: "ARKit", image: "iOS" },
+                "polymer",
+                { label: ".NET core", image: ".NET" },
+                { label: "shadow DOM", image: "JavaScript" },
+                { label: "web components", image: "web components" },
+                { label: "material design lite", image: "material design" },
               ]}
             />
           </>
@@ -217,14 +165,7 @@ export const Work = () => (
                 <li>Leading the dev team</li>
               </CardList>
             </CardContent>
-            <TagList
-              tags={[
-                { label: "C#", icon: csharp },
-                { label: ".NET", icon: dotnet },
-                { label: "Azure", icon: azure },
-                { label: "JavaScript", icon: javascript },
-              ]}
-            />
+            <TagList tags={["C#", ".NET", "Azure", "JavaScript"]} />
           </>
         ),
       },
@@ -242,14 +183,7 @@ export const Work = () => (
                 <li>Agent app & Internal Store App</li>
               </CardList>
             </CardContent>
-            <TagList
-              tags={[
-                { label: "iOS", icon: ios },
-                { label: "java", icon: java },
-                { label: "swift", icon: swift },
-                { label: "android", icon: android },
-              ]}
-            />
+            <TagList tags={["iOS", "java", "swift", "android"]} />
           </>
         ),
       },
@@ -265,13 +199,7 @@ export const Work = () => (
                 <li>Dealing with authorization</li>
               </CardList>
             </CardContent>
-            <TagList
-              tags={[
-                { label: "IIS", icon: microsoft },
-                { label: ".NET", icon: dotnet },
-                { label: "bootstrap", icon: bootstrap },
-              ]}
-            />
+            <TagList tags={[{ label: "IIS", image: "microsoft" }, ".NET", "bootstrap"]} />
           </>
         ),
       },
@@ -291,12 +219,7 @@ export const Work = () => (
               </CardList>
             </CardContent>
             <TagList
-              tags={[
-                { label: ".NET", icon: dotnet },
-                { label: "ms-SQL", icon: msSql },
-                { label: "SQLite", icon: sqlite },
-                { label: "Windows 8 & 10", icon: microsoft },
-              ]}
+              tags={[".NET", "ms-SQL", "SQLite", { label: "Windows 8 & 10", image: "microsoft" }]}
             />
           </>
         ),
@@ -321,9 +244,9 @@ export const Work = () => (
             </CardContent>
             <TagList
               tags={[
-                { label: "iPad", icon: ios },
-                { label: "SQLite", icon: sqlite },
-                { label: "C# (Xamarin.Forms)", icon: csharp },
+                { label: "iPad", image: "iOS" },
+                "SQLite",
+                { label: "C# (Xamarin.Forms)", image: "C#" },
               ]}
             />
           </>
@@ -343,11 +266,11 @@ export const Work = () => (
             </CardContent>
             <TagList
               tags={[
-                { label: "iOS", icon: ios },
-                { label: "Azure", icon: azure },
-                { label: "Android", icon: android },
-                { label: "WinPhone", icon: microsoft },
-                { label: "C# (Xamarin)", icon: csharp },
+                "iOS",
+                "Azure",
+                "android",
+                { label: "WinPhone", image: "microsoft" },
+                { label: "C# (Xamarin)", image: "C#" },
               ]}
             />
           </>
@@ -368,10 +291,10 @@ export const Work = () => (
             </CardContent>
             <TagList
               tags={[
-                { label: "Azure", icon: azure },
-                { label: "SQLite", icon: sqlite },
-                { label: ".NET core", icon: dotnet },
-                { label: "Windows 10 (UWP)", icon: microsoft },
+                "Azure",
+                "SQLite",
+                { label: ".NET core", image: ".NET" },
+                { label: "Windows 10 (UWP)", image: "microsoft" },
               ]}
             />
           </>
@@ -393,9 +316,9 @@ export const Work = () => (
             </CardContent>
             <TagList
               tags={[
-                { label: "IIS", icon: microsoft },
-                { label: "tfs 2013", icon: microsoft },
-                { label: "MS release management", icon: microsoft },
+                { label: "IIS", image: "microsoft" },
+                { label: "tfs 2013", image: "microsoft" },
+                { label: "MS release management", image: "microsoft" },
               ]}
             />
           </>
@@ -421,8 +344,8 @@ export const Work = () => (
             </CardContent>
             <TagList
               tags={[
-                { label: "azure PaaS", icon: azure },
-                { label: ".NET MVC", icon: dotnet },
+                { label: "azure PaaS", image: "Azure" },
+                { label: ".NET MVC", image: ".NET" },
               ]}
             />
           </>
@@ -448,8 +371,8 @@ export const Work = () => (
             </CardContent>
             <TagList
               tags={[
-                { label: "azure PaaS", icon: azure },
-                { label: ".NET MVC", icon: dotnet },
+                { label: "azure PaaS", image: "Azure" },
+                { label: ".NET MVC", image: ".NET" },
               ]}
             />
           </>
@@ -462,13 +385,13 @@ export const Work = () => (
             <CardContent className="top-12 gap-y-6">
               <CardTitle subtitle="june 2016">Holder</CardTitle>
               <CardList className="space-y-2">
-                <li>onsite training and Conseling about Azure IaaS and PaaS solutions</li>
+                <li>onsite training and Counseling about Azure IaaS and PaaS solutions</li>
               </CardList>
             </CardContent>
             <TagList
               tags={[
-                { label: "azure IaaS", icon: azure },
-                { label: "azure PaaS", icon: azure },
+                { label: "azure IaaS", image: "Azure" },
+                { label: "azure PaaS", image: "Azure" },
               ]}
             />
           </>
@@ -517,14 +440,15 @@ export const Work = () => (
             </CardContent>
             <TagList
               tags={[
-                { label: "C#", icon: csharp },
-                { label: ".NET", icon: dotnet },
-                { label: "endeca", icon: threedots },
-                { label: "angular", icon: angular },
-                { label: "bootstrap", icon: bootstrap },
-                { label: "SQL azure", icon: msSql },
-                { label: "azure PaaS & IaaS", icon: azure },
-                { label: "chrome extension", icon: chrome },
+                "C#",
+                ".NET",
+                ,
+                { label: "endeca", image: "..." },
+                "angular",
+                "bootstrap",
+                { label: "SQL azure", image: "ms-SQL" },
+                { label: "azure PaaS & IaaS", image: "Azure" },
+                { label: "chrome extension", image: "chrome" },
               ]}
             />
           </>
@@ -545,14 +469,14 @@ export const Work = () => (
             </CardContent>
             <TagList
               tags={[
-                { label: "C#", icon: csharp },
-                { label: ".NET", icon: dotnet },
-                { label: "mirakl", icon: threedots },
-                { label: "endeca", icon: threedots },
-                { label: "javascript", icon: javascript },
-                { label: "SQL azure", icon: msSql },
-                { label: "azure PaaS & IaaS", icon: azure },
-                { label: "chrome extension", icon: chrome },
+                "C#",
+                ".NET",
+                { label: "mirakl", image: "..." },
+                { label: "endeca", image: "..." },
+                "JavaScript",
+                { label: "SQL azure", image: "ms-SQL" },
+                { label: "azure PaaS & IaaS", image: "Azure" },
+                { label: "chrome extension", image: "chrome" },
               ]}
             />
           </>
@@ -566,17 +490,12 @@ export const Work = () => (
               <CardTitle subtitle="august 2012 – november 2012">Evian chez vous</CardTitle>
               <CardList className="space-y-6">
                 <li>Danone</li>
-                <li>Developing evolutions on the e-commerce front-end and sales backoffice.</li>
+                <li>Developing evolutions on the e-commerce front-end and sales back-office.</li>
                 <li>Graphical integration</li>
               </CardList>
             </CardContent>
             <TagList
-              tags={[
-                { label: "C#", icon: csharp },
-                { label: ".NET", icon: dotnet },
-                { label: "javascript", icon: javascript },
-                { label: "SQL server", icon: msSql },
-              ]}
+              tags={["C#", ".NET", "JavaScript", { label: "SQL server", image: "ms-SQL" }]}
             />
           </>
         ),
@@ -594,12 +513,7 @@ export const Work = () => (
               </CardList>
             </CardContent>
             <TagList
-              tags={[
-                { label: "vb", icon: vb },
-                { label: ".NET", icon: dotnet },
-                { label: "javascript", icon: javascript },
-                { label: "SQL server", icon: msSql },
-              ]}
+              tags={["vb", ".NET", "JavaScript", { label: "SQL server", image: "ms-SQL" }]}
             />
           </>
         ),

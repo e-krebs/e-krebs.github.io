@@ -3,19 +3,7 @@ import { Scroller } from "../components/Scroller";
 import { CardContent, CardList, CardTitle } from "../components/PlayingCard";
 import { CardLinkIcon } from "../components/CardLinkIcon";
 import { TagList } from "../components/Tags";
-
-const linkedin = new URL("../img/linkedin.svg", import.meta.url);
-const twitter = new URL("../img/twitter.svg", import.meta.url);
-const github = new URL("../img/github.svg", import.meta.url);
-
-const threedots = new URL("../img/3dots.svg", import.meta.url);
-const chrome = new URL("../img/chrome.svg", import.meta.url);
-const jest = new URL("../img/jest.svg", import.meta.url);
-const microsoft = new URL("../img/microsoft.svg", import.meta.url);
-const node = new URL("../img/node.svg", import.meta.url);
-const react = new URL("../img/react.svg", import.meta.url);
-const tailwindcss = new URL("../img/tailwindcss.svg", import.meta.url);
-const typescript = new URL("../img/typescript.svg", import.meta.url);
+import { Svg } from "../components/Svg";
 
 export const Other = () => (
   <Scroller
@@ -57,12 +45,7 @@ export const Other = () => (
               </CardList>
             </CardContent>
             <TagList
-              tags={[
-                { label: "React", icon: react },
-                { label: "parcel", icon: threedots },
-                { label: "Typescript", icon: typescript },
-                { label: "tailwindcss", icon: tailwindcss },
-              ]}
+              tags={["React", { label: "parcel", image: "..." }, "Typescript", "tailwindcss"]}
             />
           </>
         ),
@@ -89,12 +72,7 @@ export const Other = () => (
               </CardList>
             </CardContent>
             <TagList
-              tags={[
-                { label: "React", icon: react },
-                { label: "parcel", icon: threedots },
-                { label: "Typescript", icon: typescript },
-                { label: "tailwindcss", icon: tailwindcss },
-              ]}
+              tags={["React", { label: "parcel", image: "..." }, "Typescript", "tailwindcss"]}
             />
           </>
         ),
@@ -121,11 +99,11 @@ export const Other = () => (
             </CardContent>
             <TagList
               tags={[
-                { label: "React", icon: react },
-                { label: "parcel", icon: threedots },
-                { label: "react aria", icon: threedots },
-                { label: "Typescript", icon: typescript },
-                { label: "tailwindcss", icon: tailwindcss },
+                "React",
+                { label: "parcel", image: "..." },
+                { label: "react aria", image: "..." },
+                "Typescript",
+                "tailwindcss",
               ]}
             />
           </>
@@ -147,13 +125,7 @@ export const Other = () => (
                 </li>
               </CardList>
             </CardContent>
-            <TagList
-              tags={[
-                { label: "jest", icon: jest },
-                { label: "node", icon: node },
-                { label: "Typescript", icon: typescript },
-              ]}
-            />
+            <TagList tags={["jest", "node", "Typescript"]} />
           </>
         ),
       },
@@ -163,7 +135,7 @@ export const Other = () => (
           <>
             <CardContent className="top-12 gap-y-6">
               <CardTitle subtitle="since december 2016">pile</CardTitle>
-              <CardList className="space-y-6">
+              <CardList className="space-y-3">
                 <li>A chrome extension that show your Pocket list (more soon)</li>
                 <li>A personal must-have: I still use it everyday!</li>
                 <li>React, parcel, tailwindcss</li>
@@ -173,8 +145,10 @@ export const Other = () => (
                     target="_blank"
                     className="underline flex"
                   >
-                    <img src={chrome.href} className="w-6 h-6 mr-3" /> chrome web store
+                    <Svg image="chrome" className="w-6 h-6 mr-3" /> chrome web store
                   </a>
+                </li>
+                <li>
                   <a href="https://github.com/e-krebs/pile" target="_blank" className="underline">
                     e-krebs/pile
                   </a>
@@ -183,11 +157,11 @@ export const Other = () => (
             </CardContent>
             <TagList
               tags={[
-                { label: "React", icon: react },
-                { label: "parcel", icon: threedots },
-                { label: "react aria", icon: threedots },
-                { label: "Typescript", icon: typescript },
-                { label: "tailwindcss", icon: tailwindcss },
+                "React",
+                { label: "parcel", image: "..." },
+                { label: "react aria", image: "..." },
+                "Typescript",
+                "tailwindcss",
               ]}
             />
           </>
@@ -208,12 +182,7 @@ export const Other = () => (
                 <li>Used in combination with my personal home-assistant</li>
               </CardList>
             </CardContent>
-            <TagList
-              tags={[
-                { label: "node", icon: node },
-                { label: "windows", icon: microsoft },
-              ]}
-            />
+            <TagList tags={["node", { label: "windows", image: "microsoft" }]} />
           </>
         ),
       },
@@ -227,15 +196,10 @@ export const Other = () => (
               <div className="flex gap-x-6 justify-center text-white">
                 <CardLinkIcon
                   href="https://www.linkedin.com/in/emmanuel-krebs-37926b91/"
-                  title="linkedin"
-                  imageUrl={linkedin}
+                  image="linkedin"
                 />
-                <CardLinkIcon
-                  href="https://twitter.com/emmkrebs"
-                  title="twitter"
-                  imageUrl={twitter}
-                />
-                <CardLinkIcon href="https://github.com/e-krebs" title="github" imageUrl={github} />
+                <CardLinkIcon href="https://twitter.com/emmkrebs" image="twitter" />
+                <CardLinkIcon href="https://github.com/e-krebs" image="github" />
               </div>
             </div>
           </CardContent>
