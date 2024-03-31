@@ -1,9 +1,9 @@
 # resume
-personal resume (work in progress) available at https://krebs.tech/
+
+personal resume available at [krebs.tech](https://krebs.tech)
 
 # scripts
-use `yarn start` to to run locally in dev mode (no javascript or css minification)
 
-use `yarn start-prod` to run locally in production mode
+use `yarn dev` to to run locally in dev mode
 
-use `yarn build` to build and copy the result into the root folder
+use `yarn deploy` to deploy the current code to the `gh-pages` branch (the GitHub Pages site should be built from that branch)

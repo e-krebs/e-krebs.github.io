@@ -5,9 +5,14 @@
   "scripts": {
     "dev": "parcel serve src/index.html",
     "clean:cache": "rimraf .parcel-cache",
-    "clean:build": "rimraf *.*.{ico,svg,css,map,js} -g",
+    "clean:build": "rimraf dist",
     "clean": "yarn clean:cache && yarn clean:build",
-    "build": "yarn clean && parcel build src/index.html --dist-dir ."
+    "build:app": "parcel build src/index.html",
+    "build:404": "shx cp ./dist/index.html ./dist/404.html",
+    "build:CNAME": "shx cp ./CNAME ./dist/CNAME",
+    "build": "yarn clean && yarn build:app && yarn build:404 && yarn build:CNAME",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -24,10 +29,12 @@
     "@types/react": "^18.2.69",
     "@types/react-dom": "^18.2.22",
     "autoprefixer": "^10.4.19",
+    "gh-pages": "^6.1.1",
     "parcel": "^2.12.0",
     "postcss": "^8.4.38",
     "process": "^0.11.10",
     "rimraf": "^5.0.5",
+    "shx": "^0.3.4",
     "tailwindcss": "^3.4.1"
   },
   "dependencies": {
