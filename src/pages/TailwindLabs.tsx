@@ -5,16 +5,16 @@ const comicBg = new URL("../img/comic-bg.svg", import.meta.url);
 
 export const TailwindLabs: FC = () => (
   <>
-    <div className="w-full h-screen bg-gradient-to-br from-yellow-500 to-teal-500">
+    <div className="w-full h-dvh bg-gradient-to-br from-yellow-500 to-teal-500">
       <div
         style={{ backgroundImage: `url(${comicBg.href})` }}
-        className="w-full h-screen overflow-y-scroll"
+        className="w-full h-dvh overflow-y-scroll"
       >
         <div
           className={`mx-auto backdrop-blur-md backdrop-brightness-[40%]
         prose prose-invert md:prose-lg md:max-w-[100ch]`}
         >
-          <title className="z-10 block px-6 md:px-12 py-6 sticky -top-3 bg-gradient-to-bl from-teal-500 to-yellow-500 -skew-y-6 -translate-y-12 md:-translate-y-14 shadow-md">
+          <title className="z-10 block px-6 md:px-12 py-6 sticky -top-3 bg-gradient-to-bl from-teal-500 to-yellow-500 -skew-y-6 -translate-y-12 md:-translate-y-14 overflow-hidden shadow-md">
             <div className="skew-y-6 translate-y-10 md:translate-y-12 flex flex-col">
               <div className="md:flex md:justify-between">
                 <div className="flex flex-col md:flex-row order-2 float-right md:float-none">
@@ -274,8 +274,8 @@ export const TailwindLabs: FC = () => (
               convince you to start a conversation.
             </p>
 
-            <p className="md:flex">
-              <div className="text-7xl md:text-lg float-right md:float-none pl-3 md:pl-1 md:order-2">
+            <p className="lg:flex">
+              <div className="text-7xl sm:text-5xl lg:text-lg float-right lg:float-none pl-3 lg:pl-1 lg:order-2">
                 🦇
               </div>
               I hope to hear from you soon, and I'm always happy to throw a comic book
