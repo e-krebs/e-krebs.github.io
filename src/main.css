@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*,
+:before,
+:after,
+::backdrop {
+  --tw-prose-bullets: #e5e7eb;
+  --tw-prose-quote-borders: #e5e7eb;
+}
