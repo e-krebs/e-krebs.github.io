@@ -5,10 +5,10 @@ const comicBg = new URL("../img/comic-bg.svg", import.meta.url);
 
 export const TailwindLabs: FC = () => (
   <>
-    <div className="w-full h-dvh bg-gradient-to-br from-yellow-500 to-teal-500">
+    <div className="absolute inset-0 w-full bg-gradient-to-br from-yellow-500 to-teal-500">
       <div
         style={{ backgroundImage: `url(${comicBg.href})` }}
-        className="w-full h-dvh overflow-y-scroll"
+        className="w-full h-full overflow-y-scroll"
       >
         <div
           className={`mx-auto backdrop-blur-md backdrop-brightness-[40%]

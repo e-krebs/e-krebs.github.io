@@ -26,7 +26,7 @@ const CardLink: FC<CardLinkProps> = ({ to, title, icon, className }) => (
 );
 
 export const Shell = () => (
-  <div className="flex flex-col">
+  <div className="absolute inset-0 flex flex-col">
     <header className="relative h-32">
       <div className="h-full md:max-w-[50rem] mx-auto grid grid-cols-3 justify-end px-2 md:px-6 -mt-[20.5rem] md:-mt-64 gap-6">
         <CardLink
@@ -49,7 +49,7 @@ export const Shell = () => (
         />
       </div>
     </header>
-    <main className="relative flex justify-center items-center w-full h-[calc(100dvh-8rem)] overflow-hidden">
+    <main className="relative flex justify-center items-center w-full h-[calc(100%-8rem)] overflow-hidden">
       <Outlet />
     </main>
   </div>
