@@ -1,4 +1,4 @@
-import cx from "clsx";
+import { twMerge } from "tailwind-merge";
 import { FC, ReactNode, useCallback, useRef, useState } from "react";
 import { MdArrowForward, MdArrowBack } from "react-icons/md";
 import { CardBack, CardFront } from "./PlayingCard";
@@ -10,7 +10,7 @@ const SnapButton: FC<{
 }> = ({ position, scroll, ariaLabel }) => (
   <>
     <div
-      className={cx(
+      className={twMerge(
         `z-10 absolute top-0 bottom-0 w-20 flex items-center px-3 from-white blur-sm`,
         position === "left" && "left-0 bg-gradient-to-r",
         position === "right" && "right-0 bg-gradient-to-l"
@@ -18,7 +18,7 @@ const SnapButton: FC<{
     ></div>
     <button
       aria-label={ariaLabel}
-      className={cx(
+      className={twMerge(
         `z-20 p-3 rounded-lg absolute top-[calc(50%-0.5rem-0.75rem/2)] md:top-[calc(50%-1rem-0.75rem/2)]
           bg-teal-500 hover:bg-yellow-500 transition-colors
           text-4xl text-white blur-none drop-shadow-xl`,
@@ -87,7 +87,7 @@ export const Scroller: FC<{ cards: CardData[] }> = ({ cards }) => {
               ref={index === 0 ? cardRef : null}
               key={index}
               icon={icon}
-              className={cx(
+              className={twMerge(
                 "w-80 md:w-96",
                 index === 0 && index !== cards.length - 1 && "hover:-rotate-1",
                 index === cards.length - 1 && "hover:rotate-1"

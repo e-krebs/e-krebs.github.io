@@ -1,4 +1,4 @@
-import cx from "clsx";
+import { twMerge } from "tailwind-merge";
 import { FC } from "react";
 import { MdPerson, MdWork, MdAllInclusive } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
@@ -13,7 +13,7 @@ const CardLink: FC<CardLinkProps> = ({ to, title, icon, className }) => (
   <NavLink
     to={to}
     className={({ isActive }) =>
-      cx(
+      twMerge(
         className,
         "flex transition-transform",
         isActive ? "md:translate-y-12 translate-y-16" : "hover:translate-y-6 hover:z-40"

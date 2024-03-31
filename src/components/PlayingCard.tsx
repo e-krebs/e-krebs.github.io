@@ -1,4 +1,4 @@
-import cx from "clsx";
+import { twMerge } from "tailwind-merge";
 import { FC, MouseEventHandler, PropsWithChildren, forwardRef } from "react";
 
 interface CardShellProps {
@@ -17,7 +17,7 @@ export interface CardBackProps extends CardProps {
 export const CardContent: FC<PropsWithChildren<{ className?: string }>> = ({
   className,
   children,
-}) => <div className={cx(className, "absolute w-full flex flex-col")}>{children}</div>;
+}) => <div className={twMerge(className, "absolute w-full flex flex-col")}>{children}</div>;
 
 export const CardTitle: FC<PropsWithChildren<{ subtitle?: string }>> = ({ subtitle, children }) => (
   <title className="text-3xl md:text-4xl font-semibold capitalize flex flex-col w-full items-center p-3">
@@ -32,7 +32,7 @@ export const CardList: FC<PropsWithChildren<{ className?: string; isSubList?: bo
   isSubList = false,
 }) => (
   <ul
-    className={cx(
+    className={twMerge(
       className,
       isSubList
         ? "inside text-base md:text-lg list-inside"
@@ -48,7 +48,7 @@ const CardShell = forwardRef<HTMLDivElement, PropsWithChildren<CardShellProps>>(
   ({ children, className, onClick }, ref) => (
     <section
       ref={ref}
-      className={cx(
+      className={twMerge(
         className,
         `flex shrink-0 relative aspect-[2.75/4.5] md:aspect-[2.5/3.5] min-w-60
     text-white
