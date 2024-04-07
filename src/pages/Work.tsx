@@ -1,12 +1,56 @@
 import { MdArrowForward, MdOpenInNew, MdWork } from "react-icons/md";
+import { twMerge } from "tailwind-merge";
 import { CardContent, CardList, CardTitle } from "../components/PlayingCard";
 import { Scroller } from "../components/Scroller";
 import { TagList } from "../components/Tags";
 import { NavLink } from "react-router-dom";
 import { Svg } from "../components/Svg";
+import type { FC, PropsWithChildren } from "react";
 
 const Algolia = ({ className }) => <Svg image="algolia" className={className} />;
 const Expertime = ({ className }) => <Svg image="expertime" className={className} />;
+
+const triangle = `relative before:content-['']
+  before:absolute before:top-0 before:left-[calc(50%-2.5px)] before:size-0
+  before:border-x-[3px] before:border-x-transparent
+  before:border-b-8 before:border-b-white`;
+
+const RightItem: FC<
+  PropsWithChildren<{ year: string; className?: string; reversedDot?: boolean }>
+> = ({ year, className, children, reversedDot = false }) => (
+  <li
+    className={twMerge(
+      `relative before:content-['']
+      before:absolute before:-left-1 before:bottom-6
+      before:size-2 before:bg-white before:rounded-full
+      before:ring-1 before:ring-yellow-500`,
+      reversedDot && "before:bg-yellow-500 before:ring-white",
+      "col-start-2 flex flex-col border-l pl-4 pb-4",
+      className
+    )}
+  >
+    <span className="italic text-sm">{children}</span>
+    <b>{year}</b>
+  </li>
+);
+
+const LeftItem: FC<PropsWithChildren<{ className?: string; logo: FC<{ className: string }> }>> = ({
+  className,
+  children,
+  logo: Logo,
+}) => (
+  <li
+    className={twMerge(
+      "col-start-1 row-span-3 flex flex-col text-right pr-4 pb-4 mt-auto",
+      className
+    )}
+  >
+    <span className="space-x-3">
+      <span>{children}</span>
+      <Logo className="inline mb-1 w-4 h-4" />
+    </span>
+  </li>
+);
 
 export const Work = () => (
   <Scroller
@@ -14,38 +58,28 @@ export const Work = () => (
       {
         icon: MdWork,
         content: (
-          <CardContent className="top-9 md:top-12 gap-y-3 md:gap-y-6">
+          <CardContent className="top-6 md:top-12 md:gap-y-3 items-center">
             <CardTitle>in short</CardTitle>
-            <CardList className="space-y-3">
-              <li>
-                <b>2019 - ?:</b> <Algolia className="inline mb-1 w-4 h-4" /> algolia
-                <CardList isSubList={true} className="my-1 space-y-1">
-                  <li>
-                    <b>2022 - ?:</b> merchandising
-                  </li>
-                  <li>
-                    <b>2020 - 2022:</b> internals (admin, billing)
-                  </li>
-                  <li>
-                    <b>2019 - 2020:</b> internal tools
-                  </li>
-                </CardList>
-              </li>
-              <li>
-                <b>2012 - 2019:</b> <Expertime className="inline mb-1 w-4 h-4" /> expertime
-                <CardList isSubList={true} className="my-1 space-y-1">
-                  <li>
-                    <b>2017 - 2019:</b> software architect
-                  </li>
-                  <li>
-                    <b>2014 - 2017:</b> technical consultant
-                  </li>
-                  <li>
-                    <b>2012 - 2014:</b> software developer
-                  </li>
-                </CardList>
-              </li>
-            </CardList>
+            <ul className={twMerge("grid grid-cols-2 px-6", triangle)}>
+              <RightItem year="2022" className="mt-2">
+                merchandising
+              </RightItem>
+              <RightItem year="2020">internals (admin, billing)</RightItem>
+              <RightItem year="2019" reversedDot>
+                internal tools
+              </RightItem>
+              <LeftItem logo={Algolia} className="row-start-1">
+                algolia
+              </LeftItem>
+              <RightItem year="2017">software architect</RightItem>
+              <RightItem year="2014">technical consultant</RightItem>
+              <RightItem year="2012" reversedDot>
+                software developer
+              </RightItem>
+              <LeftItem logo={Expertime} className="row-start-4">
+                expertime
+              </LeftItem>
+            </ul>
           </CardContent>
         ),
       },
