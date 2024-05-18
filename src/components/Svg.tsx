@@ -27,7 +27,6 @@ const imagesDefinitions = {
   SQLite: new URL("../img/sqlite.svg", import.meta.url),
   swift: new URL("../img/swift.svg", import.meta.url),
   tailwindcss: new URL("../img/tailwindcss.svg", import.meta.url),
-  tailwindlabs: new URL("../img/tailwindlabs.svg", import.meta.url),
   ["..."]: new URL("../img/3dots.svg", import.meta.url),
   twitter: new URL("../img/twitter.svg", import.meta.url),
   Typescript: new URL("../img/typescript.svg", import.meta.url),

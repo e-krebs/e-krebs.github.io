@@ -1,7 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./main.css";
-import { Me, Other, TailwindLabs, Work } from "./pages";
+import { Me, Other, Work } from "./pages";
 import { Shell } from "./Shell";
 
 const router = createBrowserRouter([
@@ -15,7 +15,6 @@ const router = createBrowserRouter([
       { path: "/other", element: <Other /> },
     ],
   },
-  { path: "/tailwind-labs", element: <TailwindLabs /> },
   { path: "*", element: <Navigate to="/home" /> },
 ]);
 
