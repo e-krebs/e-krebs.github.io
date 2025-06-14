@@ -27,7 +27,7 @@ export const Me = () => (
             />
             <CardTitle>
               <h1>Emmanuel Krebs</h1>
-              <span className="text-lg md:text-xl">Senior software engineer</span>
+              <span className="text-lg md:text-xl">Staff software engineer</span>
             </CardTitle>
             <div className="flex gap-x-6 justify-center text-white">
               <CardLinkIcon
@@ -43,7 +43,7 @@ export const Me = () => (
       {
         icon: MdCalendarMonth,
         content: (
-          <CardContent className="top-9 md:top-12 gap-y-3 md:gap-y-6">
+          <CardContent className="top-9 md:top-12 gap-y-1">
             <CardTitle>Career & Training</CardTitle>
             <CardList className="space-y-3">
               <li>
@@ -55,8 +55,7 @@ export const Me = () => (
               </li>
               <li>
                 <b>2012:</b> started as a software developer at{" "}
-                <Svg image="expertime" className="inline mb-1 w-4 h-4" /> expertime (a service
-                company){" "}
+                <Svg image="expertime" className="inline mb-1 w-4 h-4" /> expertime
               </li>
               <li>
                 <b>2014:</b> became a technical consultant at{" "}
@@ -68,6 +67,10 @@ export const Me = () => (
               </li>
               <li>
                 <b>2019:</b> became a senior software engineer at{" "}
+                <Svg image="algolia" className="inline mb-1 w-4 h-4" /> algolia
+              </li>
+              <li>
+                <b>2025:</b> became a staff software engineer at{" "}
                 <Svg image="algolia" className="inline mb-1 w-4 h-4" /> algolia
               </li>
             </CardList>
