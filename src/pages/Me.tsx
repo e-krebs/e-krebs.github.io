@@ -34,7 +34,7 @@ export const Me = () => (
                 href="https://www.linkedin.com/in/emmanuel-krebs-37926b91/"
                 image="linkedin"
               />
-              <CardLinkIcon href="https://twitter.com/emmkrebs" image="twitter" />
+              <CardLinkIcon href="https://bsky.app/profile/krebs.tech" image="bluesky" />
               <CardLinkIcon href="https://github.com/e-krebs" image="github" />
             </div>
           </CardContent>

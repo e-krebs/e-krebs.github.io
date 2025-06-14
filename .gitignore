@@ -4,3 +4,4 @@ fonts
 .parcel-cache
 _old
 .vscode
+.DS_Store
