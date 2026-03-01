@@ -7,8 +7,12 @@ import { NavLink } from "react-router";
 import { Svg } from "../components/Svg";
 import type { FC, PropsWithChildren } from "react";
 
-const Algolia = ({ className }) => <Svg image="algolia" className={className} />;
-const Expertime = ({ className }) => <Svg image="expertime" className={className} />;
+const Algolia = ({ className }: { className?: string }) => (
+  <Svg image="algolia" className={className} />
+);
+const Expertime = ({ className }: { className?: string }) => (
+  <Svg image="expertime" className={className} />
+);
 
 const triangle = `relative before:content-['']
   before:absolute before:top-0 before:left-[calc(50%-2.5px)] before:size-0
@@ -476,7 +480,6 @@ export const Work = () => (
               tags={[
                 "C#",
                 ".NET",
-                ,
                 { label: "endeca", image: "..." },
                 "angular",
                 "bootstrap",
