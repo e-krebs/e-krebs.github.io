@@ -1,5 +1,6 @@
 import { twMerge } from "tailwind-merge";
-import { FC, MouseEventHandler, PropsWithChildren, forwardRef } from "react";
+import { MouseEventHandler, PropsWithChildren } from "react";
+import { type FC } from "../utils";
 
 interface CardShellProps {
   onClick?: MouseEventHandler<HTMLElement>;
@@ -20,10 +21,10 @@ export const CardContent: FC<PropsWithChildren<{ className?: string }>> = ({
 }) => <div className={twMerge(className, "absolute w-full flex flex-col")}>{children}</div>;
 
 export const CardTitle: FC<PropsWithChildren<{ subtitle?: string }>> = ({ subtitle, children }) => (
-  <title className="text-3xl md:text-4xl font-semibold capitalize flex flex-col w-full items-center p-3">
+  <header className="text-3xl md:text-4xl font-semibold capitalize flex flex-col w-full items-center p-3">
     {children}
-    <span className="text-lg md-text-xl lowercase">{subtitle}</span>
-  </title>
+    <h2 className="text-lg md-text-xl lowercase">{subtitle}</h2>
+  </header>
 );
 
 export const CardList: FC<PropsWithChildren<{ className?: string; isSubList?: boolean }>> = ({
@@ -44,8 +45,8 @@ export const CardList: FC<PropsWithChildren<{ className?: string; isSubList?: bo
   </ul>
 );
 
-const CardShell = forwardRef<HTMLDivElement, PropsWithChildren<CardShellProps>>(
-  ({ children, className, onClick }, ref) => (
+const CardShell: FC<PropsWithChildren<CardShellProps>, HTMLDivElement> = (
+  { children, className, onClick, ref }) => (
     <section
       ref={ref}
       className={twMerge(
@@ -59,11 +60,10 @@ const CardShell = forwardRef<HTMLDivElement, PropsWithChildren<CardShellProps>>(
     >
       {children}
     </section>
-  )
 );
 
-export const CardFront = forwardRef<HTMLDivElement, PropsWithChildren<CardProps>>(
-  ({ children, icon: Icon, className, onClick }, ref) => (
+export const CardFront: FC<PropsWithChildren<CardProps>, HTMLDivElement> = (
+  { children, icon: Icon, className, onClick, ref }) => (
     <CardShell className={className} onClick={onClick} ref={ref}>
       <svg
         stroke="white"
@@ -88,11 +88,10 @@ export const CardFront = forwardRef<HTMLDivElement, PropsWithChildren<CardProps>
       )}
       {children}
     </CardShell>
-  )
 );
 
-export const CardBack = forwardRef<HTMLDivElement, PropsWithChildren<CardBackProps>>(
-  ({ children, className, icon: Icon, title, onClick }, ref) => (
+export const CardBack: FC<PropsWithChildren<CardBackProps>, HTMLDivElement> = (
+  { children, className, icon: Icon, title, onClick, ref }) => (
     <CardShell className={className} onClick={onClick} ref={ref}>
       <svg
         stroke="white"
@@ -134,11 +133,10 @@ export const CardBack = forwardRef<HTMLDivElement, PropsWithChildren<CardBackPro
         </>
       )}
       {title !== undefined && (
-        <title className="text-xl font-semibold capitalize absolute bottom-6 flex w-full items-end justify-center p-3">
+        <div className="text-xl font-semibold capitalize absolute bottom-6 flex w-full items-end justify-center p-3">
           {title}
-        </title>
+        </div>
       )}
       {children}
     </CardShell>
-  )
 );
