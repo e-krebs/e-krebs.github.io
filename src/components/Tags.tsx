@@ -31,7 +31,8 @@ export const TagList: FC<{ tags: (TagItem | Image)[] }> = ({ tags }) => (
     {tags.map((tag) => {
       const image = typeof tag === "string" ? tag : tag.image;
       const label = typeof tag === "string" ? undefined : tag.label;
-      return <Tag key={label} image={image} label={label} />;
+      const key = typeof tag === "string" ? tag : label ?? image;
+      return <Tag key={key} image={image} label={label} />;
     })}
   </ul>
 );
