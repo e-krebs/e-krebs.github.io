@@ -1544,15 +1544,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.19.35":
-  version: 20.19.35
-  resolution: "@types/node@npm:20.19.35"
-  dependencies:
-    undici-types: "npm:~6.21.0"
-  checksum: 10c0/e27d3e1eac4105b627fdba2d86577e603c66fc7b4ad61418d41f3898d84b2f5ff3e0c6b6d3948b34976ea91056e6359740b387edcc65ca516c3f2b5a0c0f9c6a
-  languageName: node
-  linkType: hard
-
 "@types/react-dom@npm:^19.2.3":
   version: 19.2.3
   resolution: "@types/react-dom@npm:19.2.3"
@@ -1863,7 +1854,6 @@ __metadata:
   dependencies:
     "@parcel/transformer-inline-string": "npm:2.16.4"
     "@tailwindcss/postcss": "npm:^4.2.1"
-    "@types/node": "npm:^20.19.35"
     "@types/react": "npm:^19.2.14"
     "@types/react-dom": "npm:^19.2.3"
     autoprefixer: "npm:^10.4.27"
@@ -3436,13 +3426,6 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10c0/ad09fdf7a756814dce65bc60c1657b40d44451346858eea230e10f2e95a289d9183b6e32e5c11e95acc0ccc214b4f36289dcad4bf1886b0adb84d711d336a430
-  languageName: node
-  linkType: hard
-
-"undici-types@npm:~6.21.0":
-  version: 6.21.0
-  resolution: "undici-types@npm:6.21.0"
-  checksum: 10c0/c01ed51829b10aa72fc3ce64b747f8e74ae9b60eafa19a7b46ef624403508a54c526ffab06a14a26b3120d055e1104d7abe7c9017e83ced038ea5cf52f8d5e04
   languageName: node
   linkType: hard
 
