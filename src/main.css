@@ -1,11 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-*,
-:before,
-:after,
-::backdrop {
-  --tw-prose-bullets: #e5e7eb;
-  --tw-prose-quote-borders: #e5e7eb;
+@theme {
+  --color-yellow-500: rgb(234, 179, 8);
+  --color-teal-500: rgb(20, 184, 166);
+}
+
+@utility bg-linear-to-br {
+  @supports (background-image: linear-gradient(in lab, red, red)) {
+    --tw-gradient-position: to bottom right !important;
+  }
 }

@@ -557,7 +557,7 @@ export const Work = () => (
         icon: MdArrowForward,
         content: (
           <CardContent className="h-full px-6 items-center justify-center">
-            <div className="backdrop-blur-sm text-2xl leading-10 text-center">
+            <div className="backdrop-blur-xs text-2xl leading-10 text-center">
               more projects in the{" "}
               <NavLink className={"underline"} to="/other">
                 Other Projects

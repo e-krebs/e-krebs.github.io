@@ -28,7 +28,7 @@ const CardLink: FC<CardLinkProps> = ({ to, title, icon, className }) => (
 export const Shell = () => (
   <div className="absolute inset-0 flex flex-col">
     <header className="relative h-32">
-      <div className="h-full md:max-w-[50rem] mx-auto grid grid-cols-3 justify-end px-2 md:px-6 -mt-[20.5rem] md:-mt-64 gap-6">
+      <div className="h-full md:max-w-200 mx-auto grid grid-cols-3 justify-end px-2 md:px-6 -mt-82 md:-mt-64 gap-6">
         <CardLink
           to="/home"
           title="who am I?"

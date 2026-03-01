@@ -11,9 +11,9 @@ const SnapButton: FC<{
   <>
     <div
       className={twMerge(
-        `z-10 absolute top-0 bottom-0 w-16 md:w-20 flex items-center px-3 from-white blur-sm`,
-        position === "left" && "left-0 bg-gradient-to-r",
-        position === "right" && "right-0 bg-gradient-to-l"
+        `z-10 absolute top-0 bottom-0 w-16 md:w-20 flex items-center px-3 from-white blur-xs`,
+        position === "left" && "left-0 bg-linear-to-r",
+        position === "right" && "right-0 bg-linear-to-l"
       )}
     ></div>
     <button

@@ -25,7 +25,7 @@ const Tag: FC<TagItem> = ({ image, label }) => (
 
 export const TagList: FC<{ tags: (TagItem | Image)[] }> = ({ tags }) => (
   <ul
-    className="absolute bottom-0 left-0 px-6 space-x-3 flex flex-col rotate-180"
+    className="absolute bottom-0 left-0 py-6 space-y-3 flex flex-col rotate-180"
     style={{ writingMode: "vertical-lr" }}
   >
     {tags.map((tag) => {

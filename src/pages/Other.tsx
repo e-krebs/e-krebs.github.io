@@ -191,7 +191,7 @@ export const Other = () => (
         icon: MdOutlineMessage,
         content: (
           <CardContent className="h-full px-6 items-center justify-center">
-            <div className="backdrop-blur-sm p-6 space-y-6">
+            <div className="backdrop-blur-xs p-6 space-y-6">
               <CardTitle subtitle="(I'm not looking for a job)">contact me</CardTitle>
               <div className="flex gap-x-6 justify-center text-white">
                 <CardLinkIcon
