@@ -5,3 +5,4 @@ fonts
 _old
 .vscode
 .DS_Store
+.yarn

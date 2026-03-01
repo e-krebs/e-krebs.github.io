@@ -12,7 +12,7 @@
     "build:CNAME": "shx cp ./CNAME ./dist/CNAME",
     "build": "yarn clean && yarn build:app && yarn build:404 && yarn build:CNAME",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "yarn predeploy && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -45,5 +45,5 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^6.30.3"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "yarn@4.12.0"
 }
