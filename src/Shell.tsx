@@ -1,7 +1,7 @@
 import { twMerge } from "tailwind-merge";
 import { FC } from "react";
 import { MdPerson, MdWork, MdAllInclusive } from "react-icons/md";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router";
 import { CardBack, CardBackProps } from "./components/PlayingCard";
 
 interface CardLinkProps extends CardBackProps {

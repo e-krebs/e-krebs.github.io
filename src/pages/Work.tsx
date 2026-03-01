@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 import { CardContent, CardList, CardTitle } from "../components/PlayingCard";
 import { Scroller } from "../components/Scroller";
 import { TagList } from "../components/Tags";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 import { Svg } from "../components/Svg";
 import type { FC, PropsWithChildren } from "react";
 

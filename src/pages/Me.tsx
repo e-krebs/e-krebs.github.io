@@ -6,7 +6,7 @@ import {
   MdOpenInNew,
   MdPerson,
 } from "react-icons/md";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 import { Scroller } from "../components/Scroller";
 import { CardContent, CardList, CardTitle } from "../components/PlayingCard";
 import { CardLinkIcon } from "../components/CardLinkIcon";

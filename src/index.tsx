@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Navigate, RouterProvider, createBrowserRouter } from "react-router";
 import "./main.css";
 import { Me, Other, Work } from "./pages";
 import { Shell } from "./Shell";
