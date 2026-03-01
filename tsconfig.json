@@ -6,6 +6,7 @@
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "module": "ES2022",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "skipLibCheck": true
   }
 }

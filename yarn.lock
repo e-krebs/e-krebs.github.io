@@ -1338,29 +1338,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prop-types@npm:*":
-  version: 15.7.15
-  resolution: "@types/prop-types@npm:15.7.15"
-  checksum: 10c0/b59aad1ad19bf1733cf524fd4e618196c6c7690f48ee70a327eb450a42aab8e8a063fbe59ca0a5701aebe2d92d582292c0fb845ea57474f6a15f6994b0e260b2
-  languageName: node
-  linkType: hard
-
-"@types/react-dom@npm:^18.3.7":
-  version: 18.3.7
-  resolution: "@types/react-dom@npm:18.3.7"
+"@types/react-dom@npm:^19.2.3":
+  version: 19.2.3
+  resolution: "@types/react-dom@npm:19.2.3"
   peerDependencies:
-    "@types/react": ^18.0.0
-  checksum: 10c0/8bd309e2c3d1604a28a736a24f96cbadf6c05d5288cfef8883b74f4054c961b6b3a5e997fd5686e492be903c8f3380dba5ec017eff3906b1256529cd2d39603e
+    "@types/react": ^19.2.0
+  checksum: 10c0/b486ebe0f4e2fb35e2e108df1d8fc0927ca5d6002d5771e8a739de11239fe62d0e207c50886185253c99eb9dedfeeb956ea7429e5ba17f6693c7acb4c02f8cd1
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.3.28":
-  version: 18.3.28
-  resolution: "@types/react@npm:18.3.28"
+"@types/react@npm:^19.2.14":
+  version: 19.2.14
+  resolution: "@types/react@npm:19.2.14"
   dependencies:
-    "@types/prop-types": "npm:*"
     csstype: "npm:^3.2.2"
-  checksum: 10c0/683e19cd12b5c691215529af2e32b5ffbaccae3bf0ba93bfafa0e460e8dfee18423afed568be2b8eadf4b837c3749dd296a4f64e2d79f68fa66962c05f5af661
+  checksum: 10c0/7d25bf41b57719452d86d2ac0570b659210402707313a36ee612666bf11275a1c69824f8c3ee1fdca077ccfe15452f6da8f1224529b917050eb2d861e52b59b7
   languageName: node
   linkType: hard
 
@@ -1736,21 +1728,22 @@ __metadata:
   dependencies:
     "@parcel/transformer-inline-string": "npm:2.16.4"
     "@types/node": "npm:^20.19.35"
-    "@types/react": "npm:^18.3.28"
-    "@types/react-dom": "npm:^18.3.7"
+    "@types/react": "npm:^19.2.14"
+    "@types/react-dom": "npm:^19.2.3"
     autoprefixer: "npm:^10.4.27"
     gh-pages: "npm:^6.3.0"
     parcel: "npm:^2.16.4"
     postcss: "npm:^8.5.6"
     process: "npm:^0.11.10"
-    react: "npm:^18.3.1"
-    react-dom: "npm:^18.3.1"
+    react: "npm:^19.2.4"
+    react-dom: "npm:^19.2.4"
     react-icons: "npm:^5.5.0"
     react-router-dom: "npm:^6.30.3"
     rimraf: "npm:^6.1.3"
     shx: "npm:^0.4.0"
     tailwind-merge: "npm:^2.6.1"
     tailwindcss: "npm:^3.4.19"
+    typescript: "npm:^5.9.3"
   languageName: unknown
   linkType: soft
 
@@ -2199,13 +2192,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-tokens@npm:^3.0.0 || ^4.0.0":
-  version: 4.0.0
-  resolution: "js-tokens@npm:4.0.0"
-  checksum: 10c0/e248708d377aa058eacf2037b07ded847790e6de892bbad3dac0abba2e759cb9f121b00099a65195616badcb6eca8d14d975cb3e89eb1cfda644756402c8aeed
-  languageName: node
-  linkType: hard
-
 "json5@npm:^2.2.1, json5@npm:^2.2.3":
   version: 2.2.3
   resolution: "json5@npm:2.2.3"
@@ -2403,17 +2389,6 @@ __metadata:
   dependencies:
     p-locate: "npm:^4.1.0"
   checksum: 10c0/33a1c5247e87e022f9713e6213a744557a3e9ec32c5d0b5efb10aa3a38177615bf90221a5592674857039c1a0fd2063b82f285702d37b792d973e9e72ace6c59
-  languageName: node
-  linkType: hard
-
-"loose-envify@npm:^1.1.0":
-  version: 1.4.0
-  resolution: "loose-envify@npm:1.4.0"
-  dependencies:
-    js-tokens: "npm:^3.0.0 || ^4.0.0"
-  bin:
-    loose-envify: cli.js
-  checksum: 10c0/655d110220983c1a4b9c0c679a2e8016d4b67f6e9c7b5435ff5979ecdb20d0813f4dec0a08674fcbdd4846a3f07edbb50a36811fd37930b94aaa0d9daceb017e
   languageName: node
   linkType: hard
 
@@ -3057,15 +3032,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^18.3.1":
-  version: 18.3.1
-  resolution: "react-dom@npm:18.3.1"
+"react-dom@npm:^19.2.4":
+  version: 19.2.4
+  resolution: "react-dom@npm:19.2.4"
   dependencies:
-    loose-envify: "npm:^1.1.0"
-    scheduler: "npm:^0.23.2"
+    scheduler: "npm:^0.27.0"
   peerDependencies:
-    react: ^18.3.1
-  checksum: 10c0/a752496c1941f958f2e8ac56239172296fcddce1365ce45222d04a1947e0cc5547df3e8447f855a81d6d39f008d7c32eab43db3712077f09e3f67c4874973e85
+    react: ^19.2.4
+  checksum: 10c0/f0c63f1794dedb154136d4d0f59af00b41907f4859571c155940296808f4b94bf9c0c20633db75b5b2112ec13d8d7dd4f9bf57362ed48782f317b11d05a44f35
   languageName: node
   linkType: hard
 
@@ -3109,12 +3083,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.3.1":
-  version: 18.3.1
-  resolution: "react@npm:18.3.1"
-  dependencies:
-    loose-envify: "npm:^1.1.0"
-  checksum: 10c0/283e8c5efcf37802c9d1ce767f302dd569dd97a70d9bb8c7be79a789b9902451e0d16334b05d73299b20f048cbc3c7d288bbbde10b701fa194e2089c237dbea3
+"react@npm:^19.2.4":
+  version: 19.2.4
+  resolution: "react@npm:19.2.4"
+  checksum: 10c0/cd2c9ff67a720799cc3b38a516009986f7fc4cb8d3e15716c6211cf098d1357ee3e348ab05ad0600042bbb0fd888530ba92e329198c92eafa0994f5213396596
   languageName: node
   linkType: hard
 
@@ -3253,12 +3225,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:^0.23.2":
-  version: 0.23.2
-  resolution: "scheduler@npm:0.23.2"
-  dependencies:
-    loose-envify: "npm:^1.1.0"
-  checksum: 10c0/26383305e249651d4c58e6705d5f8425f153211aef95f15161c151f7b8de885f24751b377e4a0b3dd42cce09aad3f87a61dab7636859c0d89b7daf1a1e2a5c78
+"scheduler@npm:^0.27.0":
+  version: 0.27.0
+  resolution: "scheduler@npm:0.27.0"
+  checksum: 10c0/4f03048cb05a3c8fddc45813052251eca00688f413a3cee236d984a161da28db28ba71bd11e7a3dd02f7af84ab28d39fb311431d3b3772fed557945beb00c452
   languageName: node
   linkType: hard
 
@@ -3563,6 +3533,26 @@ __metadata:
   version: 0.20.2
   resolution: "type-fest@npm:0.20.2"
   checksum: 10c0/dea9df45ea1f0aaa4e2d3bed3f9a0bfe9e5b2592bddb92eb1bf06e50bcf98dbb78189668cd8bc31a0511d3fc25539b4cd5c704497e53e93e2d40ca764b10bfc3
+  languageName: node
+  linkType: hard
+
+"typescript@npm:^5.9.3":
+  version: 5.9.3
+  resolution: "typescript@npm:5.9.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/6bd7552ce39f97e711db5aa048f6f9995b53f1c52f7d8667c1abdc1700c68a76a308f579cd309ce6b53646deb4e9a1be7c813a93baaf0a28ccd536a30270e1c5
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A^5.9.3#optional!builtin<compat/typescript>":
+  version: 5.9.3
+  resolution: "typescript@patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/ad09fdf7a756814dce65bc60c1657b40d44451346858eea230e10f2e95a289d9183b6e32e5c11e95acc0ccc214b4f36289dcad4bf1886b0adb84d711d336a430
   languageName: node
   linkType: hard
 

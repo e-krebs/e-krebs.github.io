@@ -44,7 +44,7 @@ interface CardData {
 }
 
 export const Scroller: FC<{ cards: CardData[] }> = ({ cards }) => {
-  const scrollerRef = useRef<HTMLDivElement | undefined>();
+  const scrollerRef = useRef<HTMLDivElement | null>(null);
   const [snapWidth, setSnapWidth] = useState(0);
   const cardRef = useCallback((node: HTMLDivElement | null) => {
     setSnapWidth(node?.offsetWidth ?? 0);
@@ -56,7 +56,7 @@ export const Scroller: FC<{ cards: CardData[] }> = ({ cards }) => {
         ariaLabel="Previous"
         position="left"
         scroll={() =>
-          scrollerRef.current.scrollTo({
+          scrollerRef.current?.scrollTo({
             left: scrollerRef.current.scrollLeft - snapWidth,
             behavior: "smooth",
           })
@@ -66,7 +66,7 @@ export const Scroller: FC<{ cards: CardData[] }> = ({ cards }) => {
         ariaLabel="Next"
         position="right"
         scroll={() =>
-          scrollerRef.current.scrollTo({
+          scrollerRef.current?.scrollTo({
             left: scrollerRef.current.scrollLeft + snapWidth,
             behavior: "smooth",
           })

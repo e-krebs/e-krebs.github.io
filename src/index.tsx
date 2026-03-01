@@ -18,4 +18,4 @@ const router = createBrowserRouter([
   { path: "*", element: <Navigate to="/home" /> },
 ]);
 
-createRoot(document.getElementById("app")).render(<RouterProvider router={router} />);
+createRoot(document.getElementById("app")!).render(<RouterProvider router={router} />);
